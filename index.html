@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stop US Funding to Israel — Take Action</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Civic action site: facts, petition, and easy tools to contact Congress to oppose US funding to Israel." />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1>Stop US Funding to Israel</h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#facts">Facts</a>
+        <a href="#take-action">Take Action</a>
+        <a href="#petition">Sign Petition</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="hero" class="hero">
+      <h2>Hold Congress accountable: end unconditional military aid</h2>
+      <p>Use verified facts and lawful civic channels to ask Congress to reassess U.S. military funding to Israel. This site helps you learn, share, and contact your elected officials.</p>
+      <a class="btn" href="#take-action">Take Action Now</a>
+    </section>
+
+    <section id="about" class="card">
+      <h2>About this campaign</h2>
+      <p>This website provides verified sources, a prewritten message you can edit, and an easy petition form so concerned citizens can contact their lawmakers and make their voices heard peacefully and lawfully.</p>
+    </section>
+
+    <section id="facts" class="card">
+      <h2>Key facts</h2>
+      <ul>
+        <li>U.S. and Israeli governments signed a 10-year Memorandum of Understanding covering FY2019–FY2028 that pledges ~<strong>$38 billion</strong> in military assistance (≈ <strong>$3.8B/year</strong>). <small>(sources below)</small></li>
+        <li>ForeignAssistance.gov publishes up-to-date country assistance totals for Israel. Use official data when asking Congress to review spending. <small>(source below)</small></li>
+        <li>Independent analyses show additional supplemental and wartime spending beyond MOU amounts (public reporting available). <small>(source below)</small></li>
+      </ul>
+
+      <div class="sources">
+        <strong>Sources: </strong>
+        <ul>
+          <li><a target="_blank" rel="noopener" href="https://www.cfr.org/article/us-aid-israel-four-charts">Council on Foreign Relations — US aid to Israel</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.foreignassistance.gov/cd/israel/">ForeignAssistance.gov — Israel</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.congress.gov/search?q=%7B%22search%22%3A%5B%22memorandum+of+understanding+israel+2016%22%5D%7D">Congressional Research / MOU citations</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="take-action" class="card">
+      <h2>Take Action — Contact your members of Congress</h2>
+
+      <p>Pick an action below. The "Email my rep" tool will open your email client with an editable message prefilled. You can also call using the script provided.</p>
+
+      <div class="actions-grid">
+        <div>
+          <h3>Email your Representative</h3>
+          <label for="zip">Enter ZIP to find your Representative:</label>
+          <input id="zip" type="text" placeholder="e.g. 10001" maxlength="10" />
+          <button id="find-rep" class="btn">Find my Rep & Compose Email</button>
+          <p class="muted">We use official House/Senate lookup pages. No data leaves your browser.</p>
+        </div>
+
+        <div>
+          <h3>Call script</h3>
+          <p>Dial your senator/rep and use this short script:</p>
+          <blockquote id="call-script">Hello, my name is [your name]. I’m a constituent. I urge Representative/Senator [name] to oppose continuing or increasing U.S. military funding to Israel and to support measures that condition aid on humanitarian protections and accountability. Thank you.</blockquote>
+          <button id="copy-script" class="btn">Copy Script</button>
+        </div>
+      </div>
+
+      <div class="email-preview card small" id="email-preview" aria-hidden="true">
+        <h4>Email preview</h4>
+        <p><strong>To:</strong> <span id="rep-email">[rep email]</span></p>
+        <p><strong>Subject:</strong> Reconsider U.S. military aid to Israel</p>
+        <p id="email-body">Dear Representative, I respectfully urge you to reconsider U.S. military assistance to Israel... (editable)</p>
+        <a id="open-mail" class="btn" href="#">Open in Email App</a>
+      </div>
+    </section>
+
+    <section id="petition" class="card">
+      <h2>Sign the petition</h2>
+      <p>Join others calling for a congressional review of funding policy. This form collects name, email, and optional comments. The backend is a placeholder (Formspree) — swap for ActionNetwork, Change.org, or your own backend.</p>
+
+      <form id="petition-form" action="https://formspree.io/f/your-form-id" method="POST">
+        <label>
+          Full name
+          <input name="name" required />
+        </label>
+        <label>
+          Email
+          <input name="_replyto" type="email" required />
+        </label>
+        <label>
+          Comments (optional)
+          <textarea name="comments" rows="4"></textarea>
+        </label>
+
+        <!-- Spam prevention -->
+        <input type="text" name="_gotcha" style="display:none" />
+        <button type="submit" class="btn">Sign Petition</button>
+      </form>
+
+      <p class="muted">Tip: replace the `action` with your own endpoint or an ActionNetwork form URL to collect signatures privately.</p>
+    </section>
+
+    <section id="privacy" class="card small">
+      <h3>Privacy</h3>
+      <p>We collect only what you voluntarily enter in the petition form. For contacting officials we use mailto or official contact forms so no third-party tracking is added by this site. See <a href="privacy.md">full privacy</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>&copy; <span id="year"></span> Stop US Funding to Israel — For lawful civic advocacy. Not affiliated with any political campaign.</p>
+    <p class="muted">Want the site customized (logo, hosting, analytics)? Reply and I’ll produce a tailored package.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
