@@ -9,14 +9,17 @@ body{margin:0;background:var(--bg);line-height:1.5}
 .container{max-width:var(--maxw);margin:0 auto;padding:20px}
 .site-header{background:linear-gradient(90deg,#ffffff88,var(--bg));border-bottom:1px solid #e6e9ef}
 .header-inner{display:flex;align-items:center;justify-content:space-between}
-.site-header h1{font-size:1.15rem;margin:12px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.brand h1{font-size:1.05rem;margin:0}
 nav a{margin-left:14px;color:var(--accent);text-decoration:none;font-weight:600}
-.hero{padding:36px 20px;background:var(--card);margin:18px 0;border-radius:10px;box-shadow:0 6px 18px rgba(9,30,66,.04)}
+.hero{padding:24px 20px;background:var(--card);margin:18px 0;border-radius:10px;box-shadow:0 6px 18px rgba(9,30,66,.04)}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.tone-switcher{display:flex;align-items:center;gap:8px}
 .card{background:var(--card);padding:20px;margin:18px 0;border-radius:10px;box-shadow:0 6px 18px rgba(9,30,66,.04)}
 .actions-grid{display:flex;gap:18px;flex-wrap:wrap}
 .actions-grid > div{flex:1;min-width:240px}
 .btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;border:none;cursor:pointer}
-input, textarea{width:100%;padding:10px;border:1px solid #dbe4f0;border-radius:8px;margin-top:6px}
+input, textarea, select{width:100%;padding:10px;border:1px solid #dbe4f0;border-radius:8px;margin-top:6px}
 small.muted, .muted{color:var(--muted)}
 .email-preview.small{margin-top:14px;padding:12px}
 blockquote{background:#f1f5fb;border-left:3px solid var(--accent);padding:10px;border-radius:6px}
