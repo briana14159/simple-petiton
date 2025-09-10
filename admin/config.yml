@@ -1,0 +1,34 @@
+backend:
+  name: git-gateway
+  branch: main   # change if your repo uses "master"
+
+media_folder: "static/uploads"   # where files get stored in repo
+public_folder: "/uploads"        # how the site accesses them
+
+site_url: "https://yourdomain.com"  # replace with your site URL
+
+collections:
+  - name: "petition"
+    label: "Petition Content"
+    files:
+      - file: "content/petition.md"
+        label: "Petition Text"
+        name: "petitionText"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Button Text", name: "button", widget: "string", default: "Sign Petition" }
+
+  - name: "design"
+    label: "Site Design"
+    files:
+      - file: "content/design.json"
+        label: "Design Settings"
+        name: "designSettings"
+        fields:
+          - { label: "Primary Color", name: "primary_color", widget: "color" }
+          - { label: "Secondary Color", name: "secondary_color", widget: "color" }
+          - { label: "Font", name: "font", widget: "string", default: "Arial, sans-serif" }
+          - { label: "Logo", name: "logo", widget: "image", required: false }
+
