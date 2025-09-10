@@ -115,4 +115,61 @@ petitionForm.addEventListener('submit', async (e) => {
   }
   // For other types, allow default form submit to configured action.
 });
+// Load petition content
+fetch('content/petition.md')
+  .then(res => res.text())
+  .then(text => {
+    // Parse frontmatter (YAML at top of markdown)
+    const frontmatterMatch = /^---([\s\S]*?)---/.exec(text);
+    let body = text;
+
+    if (frontmatterMatch) {
+      const yaml = frontmatterMatch[1].trim();
+      body = text.replace(frontmatterMatch[0], '').trim();
+
+      // crude YAML parsing (only key: value per line)
+      const data = {};
+      yaml.split('\n').forEach(line => {
+        const [key, ...rest] = line.split(':');
+        if (key && rest) data[key.trim()] = rest.join(':').trim().replace(/"/g, '');
+      });
+
+      document.getElementById('petition-title').textContent = data.title || '';
+      document.getElementById('petition-subtitle').textContent = data.subtitle || '';
+      document.getElementById('petition-button').textContent = data.button || 'Sign Petition';
+    }
+
+    document.getElementById('petition-body').innerHTML = marked.parse(body); // requires marked.js
+  });
+
+// Load design settings
+fetch('content/design.json')
+  .then(res => res.json())
+  .then(design => {
+    const styleEl = document.getElementById('dynamic-styles');
+    styleEl.innerHTML = `
+      body {
+        font-family: ${design.font || 'Arial, sans-serif'};
+        background-color: ${design.primary_color || '#ffffff'};
+      }
+      h1, h2, button {
+        color: ${design.secondary_color || '#000000'};
+      }
+      button {
+        background-color: ${design.primary_color || '#0066cc'};
+        color: #fff;
+        padding: 0.5em 1em;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    `;
+
+    if (design.logo) {
+      const header = document.querySelector('header');
+      if (header) {
+        header.innerHTML = `<img src="${design.logo}" alt="Logo" style="max-height:50px;">` + header.innerHTML;
+      }
+    }
+  });
 
