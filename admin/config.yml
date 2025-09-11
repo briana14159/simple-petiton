@@ -5,7 +5,7 @@ backend:
 media_folder: "static/uploads"
 public_folder: "/uploads"
 
-site_url: "https://unitedforchangfl.netlify.app/" #replace with your real Netlify site URL
+site_url: "https://unitedforchangfl.netlify.app/"
 
 collections:
   - name: "petition"
@@ -30,5 +30,4 @@ collections:
           - { label: "Primary Color", name: "primary_color", widget: "color" }
           - { label: "Secondary Color", name: "secondary_color", widget: "color" }
           - { label: "Font", name: "font", widget: "string", default: "Arial, sans-serif" }
-          - { label: "Logo", name: "logo", widget: "image", required: false }abel: "Logo", name: "logo", widget: "image", required: false }
-
+          - { label: "Logo", name: "logo", widget: "image", required: false }
